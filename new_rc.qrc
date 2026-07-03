@@ -1,0 +1,27 @@
+<RCC>
+  <qresource prefix="icons">
+    <file>assets/icons/down-arrow.png</file>
+    <file>assets/icons/Add product 1.png</file>
+    <file>assets/icons/add_10115285-removebg-preview (1).png</file>
+    <file>assets/icons/analytics_796128-removebg-preview.png</file>
+    <file>assets/icons/box_2527498.png</file>
+    <file>assets/icons/box_5317283-removebg-preview.png</file>
+    <file>assets/icons/box_6130654.png</file>
+    <file>assets/icons/chart_11241016.png</file>
+    <file>assets/icons/delivery-box_4957671.png</file>
+    <file>assets/icons/medical-report_13424431.png</file>
+    <file>assets/icons/online-purchase_17147420.png</file>
+    <file>assets/icons/online-tracking_2922751.png</file>
+    <file>assets/icons/package_1212716.png</file>
+    <file>assets/icons/plus_16255943.png</file>
+    <file>assets/icons/remove-cart_7361976.png</file>
+    <file>assets/icons/report_14785409.png</file>
+    <file>assets/icons/shopping_5566654-removebg-preview.png</file>
+    <file>assets/icons/shopping-bag_7878035.png</file>
+    <file>assets/icons/track_11962408.png</file>
+    <file>assets/icons/add_10115285-removebg-preview (1).png</file>
+    <file>assets/icons/analytics_796128-removebg-preview.png</file>
+    <file>assets/icons/box_5317283-removebg-preview.png</file>
+    <file>assets/icons/shopping_5566654-removebg-preview.png</file>
+  </qresource>
+</RCC>

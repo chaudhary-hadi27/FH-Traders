@@ -1,0 +1,2781 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<ui version="4.0">
+ <class>MainWindow</class>
+ <widget class="QMainWindow" name="MainWindow">
+  <property name="geometry">
+   <rect>
+    <x>0</x>
+    <y>0</y>
+    <width>1197</width>
+    <height>719</height>
+   </rect>
+  </property>
+  <property name="font">
+   <font>
+    <family>Comic Sans MS</family>
+    <pointsize>24</pointsize>
+   </font>
+  </property>
+  <property name="windowTitle">
+   <string>MainWindow</string>
+  </property>
+  <property name="styleSheet">
+   <string notr="true">/* General Application Background */
+QWidget {
+    background-color: #d0e8f2; /* Cool light blue for a calming background */
+    font-family: 'Comic Sans MS', 'Arial', sans-serif; /* Kid-friendly font */
+    color: #1a3c6e; /* Dark blue for text */
+}
+
+/* Line Edit Styles */
+QLineEdit {
+    background-color: #ffffff; /* White for clear input visibility */
+    border: 2px solid #4682b4; /* Medium blue border */
+    border-radius: 5px;
+    padding: 5px;
+    font-size: 16px;
+    color: #1a3c6e; /* Dark blue for text */
+}
+
+QLineEdit:focus {
+    border: 2px solid #1a3c6e; /* Highlight border with dark blue on focus */
+    background-color: #f0faff; /* Very light blue when focused */
+}
+
+/* Button Styles */
+QPushButton {
+    background-color: #4682b4; /* Medium blue */
+    color: white;
+    border: 2px solid #1a3c6e; /* Dark blue border */
+    border-radius: 10px;
+    padding: 10px;
+    font-size: 16px;
+}
+
+QPushButton#pushButton_16 {
+    background-color: #4682b4; /* Medium blue */
+    color: white;
+	border:none;
+    font-size: 48px;
+}
+
+QPushButton:hover {
+    background-color: #5a9bd6; /* Lighter blue on hover */
+}
+
+QPushButton:pressed {
+    background-color: #1a3c6e; /* Dark blue when pressed */
+    border: 2px solid #ffffff; /* White border when pressed */
+}
+
+QLabel {
+    font-size: 22px;
+    color: #1a3c6e; /* Dark blue for better visibility */
+    padding: 5px;
+    border: none; /* Ensure labels have no borders */
+}
+
+QLabel#label {
+    font-size: 35px;
+    color: #1a3c6e; /* Dark blue for better visibility */
+    padding: 5px;
+}
+
+QLabel#label_2 {
+    font-size: 35px;
+    color: #1a3c6e; /* Dark blue for better visibility */
+    padding: 5px;
+}
+
+/* Frames and Group Boxes */
+QFrame, QGroupBox {
+    border: 2px solid #4682b4; /* Medium blue border */
+    border-radius: 10px;
+    background-color: #f0faff; /* Very light blue background */
+    padding: 10px;
+}
+
+/* Frames and Group Boxes */
+QFrame#frame_6{
+    border: 2px solid #4682b4; /* Medium blue border */
+    border-radius: 10px;
+}
+
+/* CheckBox and RadioButton Styles */
+QCheckBox, QRadioButton {
+    font-size: 16px;
+    color: #1a3c6e; /* Dark blue */
+}
+
+QCheckBox::indicator:checked, QRadioButton::indicator:checked {
+    background-color: #4682b4; /* Medium blue check indicator */
+    border: 1px solid #1a3c6e;
+}
+
+/* Slider Styles */
+QSlider::groove:horizontal, QSlider::groove:vertical {
+    background-color: #4682b4; /* Medium blue groove */
+    height: 8px;
+}
+
+QSlider::handle:horizontal, QSlider::handle:vertical {
+    background: #1a3c6e; /* Dark blue handle */
+    border: 2px solid #ffffff;
+    width: 16px;
+    height: 16px;
+    margin: -5px 0; /* Center the handle */
+    border-radius: 8px;
+}
+
+QSlider::handle:hover {
+    background: #5a9bd6; /* Lighter blue handle on hover */
+}
+
+QScrollBar:vertical, QScrollBar:horizontal {
+    background-color: #d0e8f2; /* Cool light blue for scrollbar background */
+    border: none;
+    width: 12px;
+}
+
+QScrollBar::handle {
+    background: #4682b4; /* Medium blue for scrollbar handle */
+    border-radius: 5px;
+}
+
+QScrollBar::handle:hover {
+    background: #5a9bd6; /* Lighter blue on hover */
+}
+
+QComboBox {
+    background-color: #ffffff; /* White background for clarity */
+    border: 2px solid #4682b4; /* Medium blue border */
+    border-radius: 5px;
+    padding: 5px;
+    font-size: 16px;
+    color: #1a3c6e; /* Dark blue text */
+}
+
+QComboBox:hover {
+    border: 2px solid #1a3c6e; /* Dark blue border on hover */
+}
+
+QComboBox:focus {
+    border: 2px solid #5a9bd6; /* Highlighted lighter blue border */
+    background-color: #f0faff; /* Very light blue when focused */
+}
+
+QComboBox::drop-down {
+    border: none; /* Removes extra border for the drop-down button */
+    background-color: #4682b4; /* Medium blue for the button */
+    width: 30px;
+}
+
+QComboBox::down-arrow {
+	image: url(:/icons/assets/icons/down-arrow.png);
+    width: 12px;
+    height: 12px;
+}
+
+QComboBox QAbstractItemView {
+    background-color: #ffffff; /* White background for drop-down list */
+    border: 2px solid #4682b4; /* Medium blue border for list */
+    color: #1a3c6e; /* Dark blue text for items */
+    selection-background-color: #5a9bd6; /* Lighter blue for selected item */
+    selection-color: #ffffff; /* White text for selected item */
+}
+
+/* TextEdit Styles */
+QTextEdit {
+    background-color: #ffffff; /* White for a clean and clear input area */
+    border: 2px solid #4682b4; /* Medium blue border */
+    border-radius: 5px;
+    padding: 10px;
+    font-size: 16px;
+    color: #1a3c6e; /* Dark blue text */
+    font-family: 'Comic Sans MS', 'Arial', sans-serif; /* Kid-friendly font */
+}
+
+QTextEdit:focus {
+    border: 2px solid #1a3c6e; /* Highlight border with dark blue on focus */
+    background-color: #f0faff; /* Very light blue background when focused */
+}
+
+/* Scrollbar Styling for QTextEdit */
+QTextEdit QScrollBar:vertical, QTextEdit QScrollBar:horizontal {
+    background-color: #d0e8f2; /* Light blue scrollbar background */
+    border: none;
+    width: 12px;
+}
+
+QTextEdit QScrollBar::handle {
+    background: #4682b4; /* Medium blue for scrollbar handle */
+    border-radius: 5px;
+}
+
+QTextEdit QScrollBar::handle:hover {
+    background: #5a9bd6; /* Lighter blue handle on hover */
+}
+
+QTextEdit QScrollBar::add-line, QTextEdit QScrollBar::sub-line {
+    background: #4682b4; /* Medium blue for arrow buttons */
+    border: none;
+    width: 12px;
+    height: 12px;
+}
+
+QTextEdit QScrollBar::add-line:hover, QTextEdit QScrollBar::sub-line:hover {
+    background: #5a9bd6; /* Lighter blue on hover */
+}
+</string>
+  </property>
+  <widget class="QWidget" name="centralwidget">
+   <layout class="QGridLayout" name="gridLayout">
+    <item row="0" column="0">
+     <widget class="QStackedWidget" name="stackedWidget_2">
+      <property name="currentIndex">
+       <number>0</number>
+      </property>
+      <widget class="QWidget" name="page_3">
+       <layout class="QGridLayout" name="gridLayout_2">
+        <item row="0" column="0">
+         <widget class="QLabel" name="label">
+          <property name="font">
+           <font>
+            <family>Comic Sans MS</family>
+            <pointsize>-1</pointsize>
+            <weight>75</weight>
+            <bold>true</bold>
+           </font>
+          </property>
+          <property name="text">
+           <string>Faiz e Hussaini Traders</string>
+          </property>
+          <property name="alignment">
+           <set>Qt::AlignCenter</set>
+          </property>
+         </widget>
+        </item>
+        <item row="1" column="0">
+         <widget class="QStackedWidget" name="stackedWidget">
+          <property name="styleSheet">
+           <string notr="true">/* Table Widget Styles */
+QTableWidget {
+    background-color: #ffffff; /* White background for table cells */
+    border: 2px solid #4682b4; /* Medium blue border around the table */
+    border-radius: 5px;
+    gridline-color: #4682b4; /* Medium blue grid lines */
+    font-size: 16px;
+    color: #1a3c6e; /* Dark blue text for cells */
+    font-family: 'Comic Sans MS', 'Arial', sans-serif; /* Kid-friendly font */
+}
+
+/* Header Styles */
+QHeaderView::section {
+    background-color: #4682b4; /* Medium blue background for headers */
+    color: #ffffff; /* White text for contrast */
+    font-size: 18px; /* Larger font size for better visibility */
+    font-weight: bold; /* Bold text for emphasis */
+    border: 1px solid #1a3c6e; /* Dark blue border for sections */
+    padding: 8px; /* Increased padding for more space */
+    text-align: center; /* Center-align text in headers */
+    height: 30px; /* Increase header height for better readability */
+}
+
+/* Fix for Horizontal Header Stretch */
+QHeaderView::section:horizontal {
+    min-width: 100px; /* Minimum width for each column header */
+}
+
+/* Fix for Vertical Header (Index Column) */
+QHeaderView::section:vertical {
+    background-color: #f0faff; /* Light blue for index column */
+    font-weight: bold; /* Bold text for better visibility */
+    font-size: 16px; /* Match the cell font size */
+    color: #1a3c6e; /* Dark blue text */
+    padding: 5px; /* Padding for clearer visibility */
+}
+
+/* Table Item Styling */
+QTableWidget::item {
+    padding: 5px; /* Add padding for table cells */
+    text-align: left; /* Align text to the left for readability */
+}
+
+/* Selected Cell Styling */
+QTableWidget::item:selected {
+    background-color: #5a9bd6; /* Lighter blue for selected cell */
+    color: #ffffff; /* White text for better contrast */
+}
+
+/* Scrollbar Styling */
+QTableWidget QScrollBar:vertical, QTableWidget QScrollBar:horizontal {
+    background-color: #d0e8f2; /* Light blue scrollbar background */
+    border: none;
+    width: 12px;
+}
+
+QTableWidget QScrollBar::handle {
+    background: #4682b4; /* Medium blue for scrollbar handle */
+    border-radius: 5px;
+}
+
+QTableWidget QScrollBar::handle:hover {
+    background: #5a9bd6; /* Lighter blue handle on hover */
+}
+
+QTableWidget QScrollBar::add-line, QTableWidget QScrollBar::sub-line {
+    background: #4682b4; /* Medium blue for arrow buttons */
+    border: none;
+    width: 12px;
+    height: 12px;
+}
+
+QTableWidget QScrollBar::add-line:hover, QTableWidget QScrollBar::sub-line:hover {
+    background: #5a9bd6; /* Lighter blue on hover */
+}
+</string>
+          </property>
+          <property name="currentIndex">
+           <number>1</number>
+          </property>
+          <widget class="QWidget" name="page">
+           <layout class="QGridLayout" name="gridLayout_14">
+            <item row="0" column="1">
+             <widget class="QFrame" name="frame_3">
+              <property name="minimumSize">
+               <size>
+                <width>650</width>
+                <height>0</height>
+               </size>
+              </property>
+              <property name="styleSheet">
+               <string notr="true">QLabel{
+	border:none;
+}</string>
+              </property>
+              <property name="frameShape">
+               <enum>QFrame::StyledPanel</enum>
+              </property>
+              <property name="frameShadow">
+               <enum>QFrame::Raised</enum>
+              </property>
+              <layout class="QGridLayout" name="gridLayout_15">
+               <item row="0" column="0">
+                <widget class="QPushButton" name="pushButton_18">
+                 <property name="sizePolicy">
+                  <sizepolicy hsizetype="Minimum" vsizetype="Minimum">
+                   <horstretch>0</horstretch>
+                   <verstretch>0</verstretch>
+                  </sizepolicy>
+                 </property>
+                 <property name="minimumSize">
+                  <size>
+                   <width>30</width>
+                   <height>30</height>
+                  </size>
+                 </property>
+                 <property name="maximumSize">
+                  <size>
+                   <width>50</width>
+                   <height>50</height>
+                  </size>
+                 </property>
+                 <property name="font">
+                  <font>
+                   <family>Comic Sans MS</family>
+                   <pointsize>-1</pointsize>
+                  </font>
+                 </property>
+                 <property name="text">
+                  <string>&lt;</string>
+                 </property>
+                 <property name="iconSize">
+                  <size>
+                   <width>50</width>
+                   <height>50</height>
+                  </size>
+                 </property>
+                </widget>
+               </item>
+               <item row="1" column="2">
+                <widget class="QLabel" name="label_13">
+                 <property name="text">
+                  <string>Name</string>
+                 </property>
+                </widget>
+               </item>
+               <item row="1" column="3">
+                <widget class="QLineEdit" name="lineEdit_5"/>
+               </item>
+               <item row="2" column="2">
+                <widget class="QLabel" name="label_14">
+                 <property name="text">
+                  <string>Category</string>
+                 </property>
+                </widget>
+               </item>
+               <item row="2" column="3">
+                <widget class="QComboBox" name="comboBox">
+                 <item>
+                  <property name="text">
+                   <string>New Item</string>
+                  </property>
+                 </item>
+                 <item>
+                  <property name="text">
+                   <string>New Item</string>
+                  </property>
+                 </item>
+                 <item>
+                  <property name="text">
+                   <string>New Item</string>
+                  </property>
+                 </item>
+                 <item>
+                  <property name="text">
+                   <string>New Item</string>
+                  </property>
+                 </item>
+                 <item>
+                  <property name="text">
+                   <string>New Item</string>
+                  </property>
+                 </item>
+                 <item>
+                  <property name="text">
+                   <string>New Item</string>
+                  </property>
+                 </item>
+                </widget>
+               </item>
+               <item row="3" column="2">
+                <widget class="QLabel" name="label_15">
+                 <property name="text">
+                  <string>Price</string>
+                 </property>
+                </widget>
+               </item>
+               <item row="3" column="3">
+                <widget class="QLineEdit" name="lineEdit_9"/>
+               </item>
+               <item row="4" column="2">
+                <widget class="QLabel" name="label_20">
+                 <property name="text">
+                  <string>Quantity</string>
+                 </property>
+                </widget>
+               </item>
+               <item row="4" column="3">
+                <widget class="QLineEdit" name="lineEdit_6"/>
+               </item>
+               <item row="5" column="0" colspan="2">
+                <widget class="QPushButton" name="pushButton_17">
+                 <property name="text">
+                  <string>Upload Image</string>
+                 </property>
+                </widget>
+               </item>
+               <item row="6" column="0" colspan="2">
+                <widget class="QLabel" name="label_16">
+                 <property name="text">
+                  <string>Description:</string>
+                 </property>
+                </widget>
+               </item>
+               <item row="7" column="0" colspan="4">
+                <widget class="QTextEdit" name="textEdit"/>
+               </item>
+               <item row="8" column="3">
+                <widget class="QPushButton" name="pushButton_7">
+                 <property name="text">
+                  <string>Add Product</string>
+                 </property>
+                </widget>
+               </item>
+               <item row="1" column="0" rowspan="4" colspan="2">
+                <widget class="QScrollArea" name="scrollArea">
+                 <property name="sizePolicy">
+                  <sizepolicy hsizetype="Expanding" vsizetype="Expanding">
+                   <horstretch>0</horstretch>
+                   <verstretch>0</verstretch>
+                  </sizepolicy>
+                 </property>
+                 <property name="minimumSize">
+                  <size>
+                   <width>300</width>
+                   <height>0</height>
+                  </size>
+                 </property>
+                 <property name="maximumSize">
+                  <size>
+                   <width>500</width>
+                   <height>16777215</height>
+                  </size>
+                 </property>
+                 <property name="widgetResizable">
+                  <bool>true</bool>
+                 </property>
+                 <widget class="QWidget" name="scrollAreaWidgetContents">
+                  <property name="geometry">
+                   <rect>
+                    <x>0</x>
+                    <y>0</y>
+                    <width>276</width>
+                    <height>194</height>
+                   </rect>
+                  </property>
+                  <layout class="QGridLayout" name="gridLayout_16">
+                   <property name="leftMargin">
+                    <number>0</number>
+                   </property>
+                   <property name="topMargin">
+                    <number>0</number>
+                   </property>
+                   <property name="rightMargin">
+                    <number>0</number>
+                   </property>
+                   <property name="bottomMargin">
+                    <number>0</number>
+                   </property>
+                   <property name="spacing">
+                    <number>0</number>
+                   </property>
+                   <item row="0" column="0">
+                    <widget class="QLabel" name="label_12">
+                     <property name="text">
+                      <string>Product Picture</string>
+                     </property>
+                     <property name="scaledContents">
+                      <bool>true</bool>
+                     </property>
+                     <property name="alignment">
+                      <set>Qt::AlignCenter</set>
+                     </property>
+                    </widget>
+                   </item>
+                  </layout>
+                 </widget>
+                </widget>
+               </item>
+               <item row="0" column="1" colspan="3">
+                <widget class="QLabel" name="label_9">
+                 <property name="sizePolicy">
+                  <sizepolicy hsizetype="Preferred" vsizetype="Fixed">
+                   <horstretch>0</horstretch>
+                   <verstretch>0</verstretch>
+                  </sizepolicy>
+                 </property>
+                 <property name="text">
+                  <string>Add Product</string>
+                 </property>
+                 <property name="alignment">
+                  <set>Qt::AlignCenter</set>
+                 </property>
+                </widget>
+               </item>
+              </layout>
+             </widget>
+            </item>
+            <item row="0" column="0">
+             <spacer name="horizontalSpacer_5">
+              <property name="orientation">
+               <enum>Qt::Horizontal</enum>
+              </property>
+              <property name="sizeHint" stdset="0">
+               <size>
+                <width>40</width>
+                <height>20</height>
+               </size>
+              </property>
+             </spacer>
+            </item>
+            <item row="0" column="2">
+             <spacer name="horizontalSpacer_6">
+              <property name="orientation">
+               <enum>Qt::Horizontal</enum>
+              </property>
+              <property name="sizeHint" stdset="0">
+               <size>
+                <width>40</width>
+                <height>20</height>
+               </size>
+              </property>
+             </spacer>
+            </item>
+           </layout>
+          </widget>
+          <widget class="QWidget" name="page_9">
+           <layout class="QGridLayout" name="gridLayout_25">
+            <item row="0" column="0">
+             <widget class="QFrame" name="frame_9">
+              <property name="styleSheet">
+               <string notr="true">QLabel{
+	border:none;
+}
+
+QLabel#label_22{
+	border: 2px solid rgb(70, 130, 180);
+}
+
+/* Table Widget Styles */
+QTableWidget {
+    background-color: #ffffff; /* White background for table cells */
+    border: 2px solid #4682b4; /* Medium blue border around the table */
+    border-radius: 5px;
+    gridline-color: #4682b4; /* Medium blue grid lines */
+    font-size: 16px;
+    color: #1a3c6e; /* Dark blue text for cells */
+    font-family: 'Comic Sans MS', 'Arial', sans-serif; /* Kid-friendly font */
+}
+
+/* Header Styles */
+QHeaderView::section {
+    background-color: #4682b4; /* Medium blue background for headers */
+    color: #ffffff; /* White text for contrast */
+    font-size: 18px; /* Larger font size for better visibility */
+    font-weight: bold; /* Bold text for emphasis */
+    border: 1px solid #1a3c6e; /* Dark blue border for sections */
+    padding: 8px; /* Increased padding for more space */
+    text-align: center; /* Center-align text in headers */
+    height: 30px; /* Increase header height for better readability */
+}
+
+/* Fix for Horizontal Header Stretch */
+QHeaderView::section:horizontal {
+    min-width: 100px; /* Minimum width for each column header */
+}
+
+/* Fix for Vertical Header (Index Column) */
+QHeaderView::section:vertical {
+    background-color: #f0faff; /* Light blue for index column */
+    font-weight: bold; /* Bold text for better visibility */
+    font-size: 16px; /* Match the cell font size */
+    color: #1a3c6e; /* Dark blue text */
+    padding: 5px; /* Padding for clearer visibility */
+}
+
+/* Table Item Styling */
+QTableWidget::item {
+    padding: 5px; /* Add padding for table cells */
+    text-align: left; /* Align text to the left for readability */
+}
+
+/* Selected Cell Styling */
+QTableWidget::item:selected {
+    background-color: #5a9bd6; /* Lighter blue for selected cell */
+    color: #ffffff; /* White text for better contrast */
+}
+
+/* Scrollbar Styling */
+QTableWidget QScrollBar:vertical, QTableWidget QScrollBar:horizontal {
+    background-color: #d0e8f2; /* Light blue scrollbar background */
+    border: none;
+    width: 12px;
+}
+
+QTableWidget QScrollBar::handle {
+    background: #4682b4; /* Medium blue for scrollbar handle */
+    border-radius: 5px;
+}
+
+QTableWidget QScrollBar::handle:hover {
+    background: #5a9bd6; /* Lighter blue handle on hover */
+}
+
+QTableWidget QScrollBar::add-line, QTableWidget QScrollBar::sub-line {
+    background: #4682b4; /* Medium blue for arrow buttons */
+    border: none;
+    width: 12px;
+    height: 12px;
+}
+
+QTableWidget QScrollBar::add-line:hover, QTableWidget QScrollBar::sub-line:hover {
+    background: #5a9bd6; /* Lighter blue on hover */
+}
+</string>
+              </property>
+              <property name="frameShape">
+               <enum>QFrame::StyledPanel</enum>
+              </property>
+              <property name="frameShadow">
+               <enum>QFrame::Raised</enum>
+              </property>
+              <layout class="QGridLayout" name="gridLayout_24">
+               <item row="3" column="0">
+                <layout class="QHBoxLayout" name="horizontalLayout_2">
+                 <item>
+                  <spacer name="horizontalSpacer_12">
+                   <property name="orientation">
+                    <enum>Qt::Horizontal</enum>
+                   </property>
+                   <property name="sizeHint" stdset="0">
+                    <size>
+                     <width>40</width>
+                     <height>20</height>
+                    </size>
+                   </property>
+                  </spacer>
+                 </item>
+                 <item>
+                  <widget class="QPushButton" name="pushButton_19">
+                   <property name="minimumSize">
+                    <size>
+                     <width>200</width>
+                     <height>0</height>
+                    </size>
+                   </property>
+                   <property name="text">
+                    <string>Add New Product</string>
+                   </property>
+                  </widget>
+                 </item>
+                 <item>
+                  <widget class="QPushButton" name="pushButton_22">
+                   <property name="minimumSize">
+                    <size>
+                     <width>200</width>
+                     <height>0</height>
+                    </size>
+                   </property>
+                   <property name="text">
+                    <string>Update Product Info</string>
+                   </property>
+                  </widget>
+                 </item>
+                 <item>
+                  <widget class="QPushButton" name="pushButton_23">
+                   <property name="minimumSize">
+                    <size>
+                     <width>200</width>
+                     <height>0</height>
+                    </size>
+                   </property>
+                   <property name="text">
+                    <string>Delete Product</string>
+                   </property>
+                  </widget>
+                 </item>
+                </layout>
+               </item>
+               <item row="2" column="0">
+                <widget class="QTableWidget" name="tableWidget_4">
+                 <property name="minimumSize">
+                  <size>
+                   <width>773</width>
+                   <height>0</height>
+                  </size>
+                 </property>
+                 <attribute name="horizontalHeaderVisible">
+                  <bool>false</bool>
+                 </attribute>
+                 <attribute name="horizontalHeaderMinimumSectionSize">
+                  <number>152</number>
+                 </attribute>
+                 <attribute name="horizontalHeaderShowSortIndicator" stdset="0">
+                  <bool>false</bool>
+                 </attribute>
+                 <attribute name="horizontalHeaderStretchLastSection">
+                  <bool>true</bool>
+                 </attribute>
+                 <attribute name="verticalHeaderVisible">
+                  <bool>false</bool>
+                 </attribute>
+                 <row>
+                  <property name="text">
+                   <string>1</string>
+                  </property>
+                 </row>
+                 <row>
+                  <property name="text">
+                   <string>2</string>
+                  </property>
+                 </row>
+                 <row>
+                  <property name="text">
+                   <string>3</string>
+                  </property>
+                 </row>
+                 <row>
+                  <property name="text">
+                   <string>4</string>
+                  </property>
+                 </row>
+                 <row>
+                  <property name="text">
+                   <string>5</string>
+                  </property>
+                 </row>
+                 <row>
+                  <property name="text">
+                   <string>6</string>
+                  </property>
+                 </row>
+                 <column>
+                  <property name="text">
+                   <string>Product ID</string>
+                  </property>
+                 </column>
+                 <column>
+                  <property name="text">
+                   <string>Name</string>
+                  </property>
+                 </column>
+                 <column>
+                  <property name="text">
+                   <string>Quantity </string>
+                  </property>
+                 </column>
+                 <column>
+                  <property name="text">
+                   <string>Category</string>
+                  </property>
+                 </column>
+                 <column>
+                  <property name="text">
+                   <string>Quantity</string>
+                  </property>
+                 </column>
+                 <column>
+                  <property name="text">
+                   <string>Description</string>
+                  </property>
+                 </column>
+                 <item row="0" column="0">
+                  <property name="text">
+                   <string>zzxz</string>
+                  </property>
+                 </item>
+                 <item row="0" column="1">
+                  <property name="text">
+                   <string>xssx</string>
+                  </property>
+                 </item>
+                 <item row="1" column="0">
+                  <property name="text">
+                   <string>xxxxxxxxxx</string>
+                  </property>
+                 </item>
+                 <item row="1" column="1">
+                  <property name="text">
+                   <string>efwffeafaf</string>
+                  </property>
+                 </item>
+                 <item row="1" column="2">
+                  <property name="text">
+                   <string>frefserf</string>
+                  </property>
+                 </item>
+                 <item row="1" column="3">
+                  <property name="text">
+                   <string>erfse</string>
+                  </property>
+                 </item>
+                 <item row="1" column="5">
+                  <property name="text">
+                   <string>rfrsef</string>
+                  </property>
+                 </item>
+                 <item row="2" column="0">
+                  <property name="text">
+                   <string>xsssssssssssss</string>
+                  </property>
+                 </item>
+                 <item row="2" column="1">
+                  <property name="text">
+                   <string>feferf</string>
+                  </property>
+                 </item>
+                 <item row="2" column="2">
+                  <property name="text">
+                   <string>efrse</string>
+                  </property>
+                 </item>
+                 <item row="2" column="3">
+                  <property name="text">
+                   <string>rsefr</string>
+                  </property>
+                 </item>
+                 <item row="2" column="5">
+                  <property name="text">
+                   <string>r</string>
+                  </property>
+                 </item>
+                 <item row="3" column="0">
+                  <property name="text">
+                   <string>ssssssssssss</string>
+                  </property>
+                 </item>
+                 <item row="3" column="1">
+                  <property name="text">
+                   <string>efeafer</string>
+                  </property>
+                 </item>
+                 <item row="3" column="2">
+                  <property name="text">
+                   <string>frsef</string>
+                  </property>
+                 </item>
+                 <item row="3" column="3">
+                  <property name="text">
+                   <string>serfserg</string>
+                  </property>
+                 </item>
+                 <item row="3" column="5">
+                  <property name="text">
+                   <string>gresgrse</string>
+                  </property>
+                 </item>
+                 <item row="4" column="0">
+                  <property name="text">
+                   <string>ssssssssss</string>
+                  </property>
+                 </item>
+                 <item row="4" column="1">
+                  <property name="text">
+                   <string>ferferf</string>
+                  </property>
+                 </item>
+                 <item row="4" column="2">
+                  <property name="text">
+                   <string>sgrs</string>
+                  </property>
+                 </item>
+                 <item row="4" column="3">
+                  <property name="text">
+                   <string>resgre</string>
+                  </property>
+                 </item>
+                 <item row="4" column="5">
+                  <property name="text">
+                   <string>grseg</string>
+                  </property>
+                 </item>
+                 <item row="5" column="0">
+                  <property name="text">
+                   <string>erfesfersf</string>
+                  </property>
+                 </item>
+                 <item row="5" column="1">
+                  <property name="text">
+                   <string>frsefres</string>
+                  </property>
+                 </item>
+                 <item row="5" column="2">
+                  <property name="text">
+                   <string>freegeg</string>
+                  </property>
+                 </item>
+                 <item row="5" column="3">
+                  <property name="text">
+                   <string>ssssssssss</string>
+                  </property>
+                 </item>
+                 <item row="5" column="5">
+                  <property name="text">
+                   <string>g</string>
+                  </property>
+                 </item>
+                </widget>
+               </item>
+               <item row="0" column="0">
+                <widget class="QLabel" name="label_31">
+                 <property name="text">
+                  <string>Products Status</string>
+                 </property>
+                 <property name="alignment">
+                  <set>Qt::AlignCenter</set>
+                 </property>
+                </widget>
+               </item>
+               <item row="1" column="0">
+                <widget class="QLabel" name="label_32">
+                 <property name="text">
+                  <string>Product ID     Name             Category         Price               Quantity        Description</string>
+                 </property>
+                </widget>
+               </item>
+              </layout>
+             </widget>
+            </item>
+           </layout>
+          </widget>
+          <widget class="QWidget" name="page_8">
+           <layout class="QGridLayout" name="gridLayout_19">
+            <item row="0" column="3">
+             <widget class="QFrame" name="frame_8">
+              <property name="styleSheet">
+               <string notr="true">QLabel{
+	border:none;
+}</string>
+              </property>
+              <property name="frameShape">
+               <enum>QFrame::StyledPanel</enum>
+              </property>
+              <property name="frameShadow">
+               <enum>QFrame::Raised</enum>
+              </property>
+              <layout class="QGridLayout" name="gridLayout_21">
+               <item row="1" column="0" colspan="2">
+                <widget class="QLabel" name="label_29">
+                 <property name="text">
+                  <string>Product        Quantity      Price</string>
+                 </property>
+                </widget>
+               </item>
+               <item row="3" column="1">
+                <widget class="QPushButton" name="pushButton_13">
+                 <property name="text">
+                  <string>Process Order</string>
+                 </property>
+                </widget>
+               </item>
+               <item row="0" column="0" colspan="2">
+                <widget class="QLabel" name="label_24">
+                 <property name="text">
+                  <string>Sale Info</string>
+                 </property>
+                 <property name="alignment">
+                  <set>Qt::AlignCenter</set>
+                 </property>
+                </widget>
+               </item>
+               <item row="2" column="0" colspan="2">
+                <widget class="QTableWidget" name="tableWidget_3">
+                 <attribute name="horizontalHeaderVisible">
+                  <bool>false</bool>
+                 </attribute>
+                 <attribute name="horizontalHeaderMinimumSectionSize">
+                  <number>136</number>
+                 </attribute>
+                 <attribute name="verticalHeaderVisible">
+                  <bool>false</bool>
+                 </attribute>
+                 <row>
+                  <property name="text">
+                   <string>New Row</string>
+                  </property>
+                 </row>
+                 <row>
+                  <property name="text">
+                   <string/>
+                  </property>
+                 </row>
+                 <row>
+                  <property name="text">
+                   <string>New Row</string>
+                  </property>
+                 </row>
+                 <column>
+                  <property name="text">
+                   <string>New Column</string>
+                  </property>
+                 </column>
+                 <column>
+                  <property name="text">
+                   <string>New Column</string>
+                  </property>
+                 </column>
+                 <column>
+                  <property name="text">
+                   <string>New Column</string>
+                  </property>
+                 </column>
+                 <item row="0" column="0">
+                  <property name="text">
+                   <string>123</string>
+                  </property>
+                 </item>
+                 <item row="0" column="2">
+                  <property name="text">
+                   <string>123</string>
+                  </property>
+                 </item>
+                 <item row="1" column="0">
+                  <property name="text">
+                   <string>1231</string>
+                  </property>
+                 </item>
+                 <item row="1" column="2">
+                  <property name="text">
+                   <string>3213</string>
+                  </property>
+                 </item>
+                 <item row="2" column="0">
+                  <property name="text">
+                   <string>3213</string>
+                  </property>
+                 </item>
+                 <item row="2" column="2">
+                  <property name="text">
+                   <string>23131</string>
+                  </property>
+                 </item>
+                </widget>
+               </item>
+              </layout>
+             </widget>
+            </item>
+            <item row="1" column="3">
+             <widget class="QFrame" name="frame_13">
+              <property name="styleSheet">
+               <string notr="true">QLabel{
+	border:none;
+}</string>
+              </property>
+              <property name="frameShape">
+               <enum>QFrame::StyledPanel</enum>
+              </property>
+              <property name="frameShadow">
+               <enum>QFrame::Raised</enum>
+              </property>
+              <layout class="QGridLayout" name="gridLayout_22">
+               <item row="0" column="0" colspan="2">
+                <widget class="QLabel" name="label_25">
+                 <property name="text">
+                  <string>Customer Information</string>
+                 </property>
+                 <property name="alignment">
+                  <set>Qt::AlignCenter</set>
+                 </property>
+                </widget>
+               </item>
+               <item row="2" column="1">
+                <widget class="QLineEdit" name="lineEdit_12"/>
+               </item>
+               <item row="2" column="0">
+                <widget class="QLabel" name="label_30">
+                 <property name="text">
+                  <string>Discount:</string>
+                 </property>
+                </widget>
+               </item>
+               <item row="1" column="0">
+                <widget class="QLabel" name="label_28">
+                 <property name="text">
+                  <string>Customer Name:</string>
+                 </property>
+                </widget>
+               </item>
+               <item row="1" column="1">
+                <widget class="QLineEdit" name="lineEdit_11"/>
+               </item>
+               <item row="3" column="1">
+                <widget class="QPushButton" name="pushButton_14">
+                 <property name="text">
+                  <string>Save Customer Information</string>
+                 </property>
+                </widget>
+               </item>
+              </layout>
+             </widget>
+            </item>
+            <item row="0" column="1" rowspan="2">
+             <widget class="QFrame" name="frame_5">
+              <property name="maximumSize">
+               <size>
+                <width>613</width>
+                <height>16777215</height>
+               </size>
+              </property>
+              <property name="styleSheet">
+               <string notr="true">QLabel{
+	border:none;
+}</string>
+              </property>
+              <property name="frameShape">
+               <enum>QFrame::StyledPanel</enum>
+              </property>
+              <property name="frameShadow">
+               <enum>QFrame::Raised</enum>
+              </property>
+              <layout class="QGridLayout" name="gridLayout_23">
+               <item row="3" column="1" colspan="2">
+                <widget class="QTableWidget" name="tableWidget_2">
+                 <property name="sizePolicy">
+                  <sizepolicy hsizetype="Preferred" vsizetype="Expanding">
+                   <horstretch>0</horstretch>
+                   <verstretch>0</verstretch>
+                  </sizepolicy>
+                 </property>
+                 <attribute name="horizontalHeaderVisible">
+                  <bool>false</bool>
+                 </attribute>
+                 <attribute name="horizontalHeaderMinimumSectionSize">
+                  <number>126</number>
+                 </attribute>
+                 <attribute name="verticalHeaderVisible">
+                  <bool>false</bool>
+                 </attribute>
+                 <row>
+                  <property name="text">
+                   <string>New Row</string>
+                  </property>
+                 </row>
+                 <row>
+                  <property name="text">
+                   <string>New Row</string>
+                  </property>
+                 </row>
+                 <row>
+                  <property name="text">
+                   <string>New Row</string>
+                  </property>
+                 </row>
+                 <row>
+                  <property name="text">
+                   <string>New Row</string>
+                  </property>
+                 </row>
+                 <row>
+                  <property name="text">
+                   <string>New Row</string>
+                  </property>
+                 </row>
+                 <row>
+                  <property name="text">
+                   <string>New Row</string>
+                  </property>
+                 </row>
+                 <column>
+                  <property name="text">
+                   <string>Product ID</string>
+                  </property>
+                 </column>
+                 <column>
+                  <property name="text">
+                   <string>Name</string>
+                  </property>
+                 </column>
+                 <column>
+                  <property name="text">
+                   <string>Price</string>
+                  </property>
+                 </column>
+                 <column>
+                  <property name="text">
+                   <string>Quantity</string>
+                  </property>
+                 </column>
+                 <item row="0" column="0">
+                  <property name="text">
+                   <string>123</string>
+                  </property>
+                 </item>
+                 <item row="0" column="1">
+                  <property name="text">
+                   <string>3213</string>
+                  </property>
+                 </item>
+                 <item row="0" column="2">
+                  <property name="text">
+                   <string>31232</string>
+                  </property>
+                 </item>
+                 <item row="0" column="3">
+                  <property name="text">
+                   <string>312321</string>
+                  </property>
+                 </item>
+                 <item row="1" column="0">
+                  <property name="text">
+                   <string>321312</string>
+                  </property>
+                 </item>
+                 <item row="1" column="1">
+                  <property name="text">
+                   <string>321312</string>
+                  </property>
+                 </item>
+                 <item row="1" column="2">
+                  <property name="text">
+                   <string>32132</string>
+                  </property>
+                 </item>
+                 <item row="1" column="3">
+                  <property name="text">
+                   <string>13123</string>
+                  </property>
+                 </item>
+                 <item row="2" column="0">
+                  <property name="text">
+                   <string>3123</string>
+                  </property>
+                 </item>
+                 <item row="2" column="1">
+                  <property name="text">
+                   <string>12312</string>
+                  </property>
+                 </item>
+                 <item row="2" column="2">
+                  <property name="text">
+                   <string>123</string>
+                  </property>
+                 </item>
+                 <item row="2" column="3">
+                  <property name="text">
+                   <string>213</string>
+                  </property>
+                 </item>
+                 <item row="3" column="0">
+                  <property name="text">
+                   <string>12312</string>
+                  </property>
+                 </item>
+                 <item row="3" column="1">
+                  <property name="text">
+                   <string>123</string>
+                  </property>
+                 </item>
+                 <item row="3" column="2">
+                  <property name="text">
+                   <string>123</string>
+                  </property>
+                 </item>
+                 <item row="3" column="3">
+                  <property name="text">
+                   <string>123</string>
+                  </property>
+                 </item>
+                 <item row="4" column="0">
+                  <property name="text">
+                   <string>12</string>
+                  </property>
+                 </item>
+                 <item row="4" column="1">
+                  <property name="text">
+                   <string>123</string>
+                  </property>
+                 </item>
+                 <item row="4" column="2">
+                  <property name="text">
+                   <string>123</string>
+                  </property>
+                 </item>
+                 <item row="4" column="3">
+                  <property name="text">
+                   <string>213</string>
+                  </property>
+                 </item>
+                 <item row="5" column="0">
+                  <property name="text">
+                   <string>3123</string>
+                  </property>
+                 </item>
+                 <item row="5" column="1">
+                  <property name="text">
+                   <string>123</string>
+                  </property>
+                 </item>
+                 <item row="5" column="2">
+                  <property name="text">
+                   <string>213</string>
+                  </property>
+                 </item>
+                 <item row="5" column="3">
+                  <property name="text">
+                   <string>123123</string>
+                  </property>
+                 </item>
+                </widget>
+               </item>
+               <item row="4" column="1">
+                <widget class="QPushButton" name="pushButton_12">
+                 <property name="text">
+                  <string>Add Item</string>
+                 </property>
+                </widget>
+               </item>
+               <item row="1" column="1">
+                <widget class="QLabel" name="label_27">
+                 <property name="text">
+                  <string>Search:</string>
+                 </property>
+                </widget>
+               </item>
+               <item row="1" column="2">
+                <widget class="QLineEdit" name="lineEdit_10"/>
+               </item>
+               <item row="0" column="1" colspan="2">
+                <widget class="QLabel" name="label_23">
+                 <property name="text">
+                  <string>Find Product</string>
+                 </property>
+                 <property name="alignment">
+                  <set>Qt::AlignCenter</set>
+                 </property>
+                </widget>
+               </item>
+               <item row="2" column="1" colspan="2">
+                <widget class="QLabel" name="label_26">
+                 <property name="styleSheet">
+                  <string notr="true">QLabel#label_26{
+	font-family: 'Comic Sans MS', 'Arial', sans-serif;
+	font: 75 14pt;
+}</string>
+                 </property>
+                 <property name="text">
+                  <string>Product ID    Name            Price              Quantity In Stock</string>
+                 </property>
+                </widget>
+               </item>
+              </layout>
+             </widget>
+            </item>
+            <item row="0" column="4" rowspan="2">
+             <spacer name="horizontalSpacer_11">
+              <property name="orientation">
+               <enum>Qt::Horizontal</enum>
+              </property>
+              <property name="sizeHint" stdset="0">
+               <size>
+                <width>40</width>
+                <height>20</height>
+               </size>
+              </property>
+             </spacer>
+            </item>
+            <item row="0" column="0" rowspan="2">
+             <spacer name="horizontalSpacer_10">
+              <property name="orientation">
+               <enum>Qt::Horizontal</enum>
+              </property>
+              <property name="sizeHint" stdset="0">
+               <size>
+                <width>40</width>
+                <height>20</height>
+               </size>
+              </property>
+             </spacer>
+            </item>
+           </layout>
+          </widget>
+          <widget class="QWidget" name="page_7">
+           <layout class="QGridLayout" name="gridLayout_17">
+            <item row="0" column="1">
+             <widget class="QFrame" name="frame_4">
+              <property name="styleSheet">
+               <string notr="true">QLabel{
+	border:none;
+}
+
+QLabel#label_22{
+	border: 2px solid rgb(70, 130, 180);
+}
+
+/* Table Widget Styles */
+QTableWidget {
+    background-color: #ffffff; /* White background for table cells */
+    border: 2px solid #4682b4; /* Medium blue border around the table */
+    border-radius: 5px;
+    gridline-color: #4682b4; /* Medium blue grid lines */
+    font-size: 16px;
+    color: #1a3c6e; /* Dark blue text for cells */
+    font-family: 'Comic Sans MS', 'Arial', sans-serif; /* Kid-friendly font */
+}
+
+/* Header Styles */
+QHeaderView::section {
+    background-color: #4682b4; /* Medium blue background for headers */
+    color: #ffffff; /* White text for contrast */
+    font-size: 18px; /* Larger font size for better visibility */
+    font-weight: bold; /* Bold text for emphasis */
+    border: 1px solid #1a3c6e; /* Dark blue border for sections */
+    padding: 8px; /* Increased padding for more space */
+    text-align: center; /* Center-align text in headers */
+    height: 30px; /* Increase header height for better readability */
+}
+
+/* Fix for Horizontal Header Stretch */
+QHeaderView::section:horizontal {
+    min-width: 100px; /* Minimum width for each column header */
+}
+
+/* Fix for Vertical Header (Index Column) */
+QHeaderView::section:vertical {
+    background-color: #f0faff; /* Light blue for index column */
+    font-weight: bold; /* Bold text for better visibility */
+    font-size: 16px; /* Match the cell font size */
+    color: #1a3c6e; /* Dark blue text */
+    padding: 5px; /* Padding for clearer visibility */
+}
+
+/* Table Item Styling */
+QTableWidget::item {
+    padding: 5px; /* Add padding for table cells */
+    text-align: left; /* Align text to the left for readability */
+}
+
+/* Selected Cell Styling */
+QTableWidget::item:selected {
+    background-color: #5a9bd6; /* Lighter blue for selected cell */
+    color: #ffffff; /* White text for better contrast */
+}
+
+/* Scrollbar Styling */
+QTableWidget QScrollBar:vertical, QTableWidget QScrollBar:horizontal {
+    background-color: #d0e8f2; /* Light blue scrollbar background */
+    border: none;
+    width: 12px;
+}
+
+QTableWidget QScrollBar::handle {
+    background: #4682b4; /* Medium blue for scrollbar handle */
+    border-radius: 5px;
+}
+
+QTableWidget QScrollBar::handle:hover {
+    background: #5a9bd6; /* Lighter blue handle on hover */
+}
+
+QTableWidget QScrollBar::add-line, QTableWidget QScrollBar::sub-line {
+    background: #4682b4; /* Medium blue for arrow buttons */
+    border: none;
+    width: 12px;
+    height: 12px;
+}
+
+QTableWidget QScrollBar::add-line:hover, QTableWidget QScrollBar::sub-line:hover {
+    background: #5a9bd6; /* Lighter blue on hover */
+}
+</string>
+              </property>
+              <property name="frameShape">
+               <enum>QFrame::StyledPanel</enum>
+              </property>
+              <property name="frameShadow">
+               <enum>QFrame::Raised</enum>
+              </property>
+              <layout class="QGridLayout" name="gridLayout_18">
+               <item row="3" column="0">
+                <layout class="QHBoxLayout" name="horizontalLayout">
+                 <item>
+                  <spacer name="horizontalSpacer_7">
+                   <property name="orientation">
+                    <enum>Qt::Horizontal</enum>
+                   </property>
+                   <property name="sizeHint" stdset="0">
+                    <size>
+                     <width>40</width>
+                     <height>20</height>
+                    </size>
+                   </property>
+                  </spacer>
+                 </item>
+                 <item>
+                  <widget class="QPushButton" name="pushButton_8">
+                   <property name="minimumSize">
+                    <size>
+                     <width>200</width>
+                     <height>0</height>
+                    </size>
+                   </property>
+                   <property name="text">
+                    <string>Add New Product</string>
+                   </property>
+                  </widget>
+                 </item>
+                 <item>
+                  <widget class="QPushButton" name="pushButton_11">
+                   <property name="minimumSize">
+                    <size>
+                     <width>200</width>
+                     <height>0</height>
+                    </size>
+                   </property>
+                   <property name="text">
+                    <string>Update Product Info</string>
+                   </property>
+                  </widget>
+                 </item>
+                 <item>
+                  <widget class="QPushButton" name="pushButton_10">
+                   <property name="minimumSize">
+                    <size>
+                     <width>200</width>
+                     <height>0</height>
+                    </size>
+                   </property>
+                   <property name="text">
+                    <string>Delete Product</string>
+                   </property>
+                  </widget>
+                 </item>
+                </layout>
+               </item>
+               <item row="2" column="0">
+                <widget class="QTableWidget" name="tableWidget">
+                 <property name="minimumSize">
+                  <size>
+                   <width>773</width>
+                   <height>0</height>
+                  </size>
+                 </property>
+                 <attribute name="horizontalHeaderVisible">
+                  <bool>false</bool>
+                 </attribute>
+                 <attribute name="horizontalHeaderMinimumSectionSize">
+                  <number>152</number>
+                 </attribute>
+                 <attribute name="horizontalHeaderShowSortIndicator" stdset="0">
+                  <bool>false</bool>
+                 </attribute>
+                 <attribute name="horizontalHeaderStretchLastSection">
+                  <bool>true</bool>
+                 </attribute>
+                 <attribute name="verticalHeaderVisible">
+                  <bool>false</bool>
+                 </attribute>
+                 <row>
+                  <property name="text">
+                   <string>1</string>
+                  </property>
+                 </row>
+                 <row>
+                  <property name="text">
+                   <string>2</string>
+                  </property>
+                 </row>
+                 <row>
+                  <property name="text">
+                   <string>3</string>
+                  </property>
+                 </row>
+                 <row>
+                  <property name="text">
+                   <string>4</string>
+                  </property>
+                 </row>
+                 <row>
+                  <property name="text">
+                   <string>5</string>
+                  </property>
+                 </row>
+                 <row>
+                  <property name="text">
+                   <string>6</string>
+                  </property>
+                 </row>
+                 <column>
+                  <property name="text">
+                   <string>Product ID</string>
+                  </property>
+                 </column>
+                 <column>
+                  <property name="text">
+                   <string>Name</string>
+                  </property>
+                 </column>
+                 <column>
+                  <property name="text">
+                   <string>Quantity </string>
+                  </property>
+                 </column>
+                 <column>
+                  <property name="text">
+                   <string>Category</string>
+                  </property>
+                 </column>
+                 <column>
+                  <property name="text">
+                   <string>Quantity</string>
+                  </property>
+                 </column>
+                 <column>
+                  <property name="text">
+                   <string>Description</string>
+                  </property>
+                 </column>
+                 <item row="0" column="0">
+                  <property name="text">
+                   <string>zzxz</string>
+                  </property>
+                 </item>
+                 <item row="0" column="1">
+                  <property name="text">
+                   <string>xssx</string>
+                  </property>
+                 </item>
+                 <item row="1" column="0">
+                  <property name="text">
+                   <string>xxxxxxxxxx</string>
+                  </property>
+                 </item>
+                 <item row="1" column="1">
+                  <property name="text">
+                   <string>efwffeafaf</string>
+                  </property>
+                 </item>
+                 <item row="1" column="2">
+                  <property name="text">
+                   <string>frefserf</string>
+                  </property>
+                 </item>
+                 <item row="1" column="3">
+                  <property name="text">
+                   <string>erfse</string>
+                  </property>
+                 </item>
+                 <item row="1" column="5">
+                  <property name="text">
+                   <string>rfrsef</string>
+                  </property>
+                 </item>
+                 <item row="2" column="0">
+                  <property name="text">
+                   <string>xsssssssssssss</string>
+                  </property>
+                 </item>
+                 <item row="2" column="1">
+                  <property name="text">
+                   <string>feferf</string>
+                  </property>
+                 </item>
+                 <item row="2" column="2">
+                  <property name="text">
+                   <string>efrse</string>
+                  </property>
+                 </item>
+                 <item row="2" column="3">
+                  <property name="text">
+                   <string>rsefr</string>
+                  </property>
+                 </item>
+                 <item row="2" column="5">
+                  <property name="text">
+                   <string>r</string>
+                  </property>
+                 </item>
+                 <item row="3" column="0">
+                  <property name="text">
+                   <string>ssssssssssss</string>
+                  </property>
+                 </item>
+                 <item row="3" column="1">
+                  <property name="text">
+                   <string>efeafer</string>
+                  </property>
+                 </item>
+                 <item row="3" column="2">
+                  <property name="text">
+                   <string>frsef</string>
+                  </property>
+                 </item>
+                 <item row="3" column="3">
+                  <property name="text">
+                   <string>serfserg</string>
+                  </property>
+                 </item>
+                 <item row="3" column="5">
+                  <property name="text">
+                   <string>gresgrse</string>
+                  </property>
+                 </item>
+                 <item row="4" column="0">
+                  <property name="text">
+                   <string>ssssssssss</string>
+                  </property>
+                 </item>
+                 <item row="4" column="1">
+                  <property name="text">
+                   <string>ferferf</string>
+                  </property>
+                 </item>
+                 <item row="4" column="2">
+                  <property name="text">
+                   <string>sgrs</string>
+                  </property>
+                 </item>
+                 <item row="4" column="3">
+                  <property name="text">
+                   <string>resgre</string>
+                  </property>
+                 </item>
+                 <item row="4" column="5">
+                  <property name="text">
+                   <string>grseg</string>
+                  </property>
+                 </item>
+                 <item row="5" column="0">
+                  <property name="text">
+                   <string>erfesfersf</string>
+                  </property>
+                 </item>
+                 <item row="5" column="1">
+                  <property name="text">
+                   <string>frsefres</string>
+                  </property>
+                 </item>
+                 <item row="5" column="2">
+                  <property name="text">
+                   <string>freegeg</string>
+                  </property>
+                 </item>
+                 <item row="5" column="3">
+                  <property name="text">
+                   <string>ssssssssss</string>
+                  </property>
+                 </item>
+                 <item row="5" column="5">
+                  <property name="text">
+                   <string>g</string>
+                  </property>
+                 </item>
+                </widget>
+               </item>
+               <item row="0" column="0">
+                <widget class="QLabel" name="label_21">
+                 <property name="text">
+                  <string>Products Status</string>
+                 </property>
+                 <property name="alignment">
+                  <set>Qt::AlignCenter</set>
+                 </property>
+                </widget>
+               </item>
+               <item row="1" column="0">
+                <widget class="QLabel" name="label_22">
+                 <property name="text">
+                  <string>Product ID     Name             Category         Price               Quantity        Description</string>
+                 </property>
+                </widget>
+               </item>
+              </layout>
+             </widget>
+            </item>
+            <item row="0" column="0">
+             <spacer name="horizontalSpacer_8">
+              <property name="orientation">
+               <enum>Qt::Horizontal</enum>
+              </property>
+              <property name="sizeHint" stdset="0">
+               <size>
+                <width>40</width>
+                <height>20</height>
+               </size>
+              </property>
+             </spacer>
+            </item>
+            <item row="0" column="2">
+             <spacer name="horizontalSpacer_9">
+              <property name="orientation">
+               <enum>Qt::Horizontal</enum>
+              </property>
+              <property name="sizeHint" stdset="0">
+               <size>
+                <width>40</width>
+                <height>20</height>
+               </size>
+              </property>
+             </spacer>
+            </item>
+           </layout>
+          </widget>
+          <widget class="QWidget" name="page_2">
+           <layout class="QGridLayout" name="gridLayout_6">
+            <item row="0" column="1">
+             <spacer name="verticalSpacer_3">
+              <property name="orientation">
+               <enum>Qt::Vertical</enum>
+              </property>
+              <property name="sizeHint" stdset="0">
+               <size>
+                <width>20</width>
+                <height>40</height>
+               </size>
+              </property>
+             </spacer>
+            </item>
+            <item row="1" column="0">
+             <spacer name="horizontalSpacer_3">
+              <property name="orientation">
+               <enum>Qt::Horizontal</enum>
+              </property>
+              <property name="sizeHint" stdset="0">
+               <size>
+                <width>40</width>
+                <height>20</height>
+               </size>
+              </property>
+             </spacer>
+            </item>
+            <item row="1" column="1">
+             <widget class="QFrame" name="frame_2">
+              <property name="frameShape">
+               <enum>QFrame::StyledPanel</enum>
+              </property>
+              <property name="frameShadow">
+               <enum>QFrame::Raised</enum>
+              </property>
+              <layout class="QGridLayout" name="gridLayout_5">
+               <property name="spacing">
+                <number>50</number>
+               </property>
+               <item row="1" column="0">
+                <layout class="QGridLayout" name="gridLayout_9">
+                 <item row="0" column="1">
+                  <widget class="QLabel" name="label_4">
+                   <property name="maximumSize">
+                    <size>
+                     <width>100</width>
+                     <height>100</height>
+                    </size>
+                   </property>
+                   <property name="styleSheet">
+                    <string notr="true">border:none</string>
+                   </property>
+                   <property name="text">
+                    <string/>
+                   </property>
+                   <property name="pixmap">
+                    <pixmap resource="new_rc.qrc">:/icons/assets/icons/add_10115285-removebg-preview (1).png</pixmap>
+                   </property>
+                   <property name="scaledContents">
+                    <bool>true</bool>
+                   </property>
+                   <property name="alignment">
+                    <set>Qt::AlignCenter</set>
+                   </property>
+                  </widget>
+                 </item>
+                 <item row="1" column="0" colspan="3">
+                  <widget class="QPushButton" name="pushButton_3">
+                   <property name="minimumSize">
+                    <size>
+                     <width>200</width>
+                     <height>0</height>
+                    </size>
+                   </property>
+                   <property name="text">
+                    <string>Add Product</string>
+                   </property>
+                   <property name="iconSize">
+                    <size>
+                     <width>46</width>
+                     <height>65</height>
+                    </size>
+                   </property>
+                  </widget>
+                 </item>
+                </layout>
+               </item>
+               <item row="1" column="1">
+                <layout class="QGridLayout" name="gridLayout_10">
+                 <item row="0" column="1">
+                  <widget class="QLabel" name="label_5">
+                   <property name="maximumSize">
+                    <size>
+                     <width>100</width>
+                     <height>100</height>
+                    </size>
+                   </property>
+                   <property name="styleSheet">
+                    <string notr="true">border:none;</string>
+                   </property>
+                   <property name="text">
+                    <string/>
+                   </property>
+                   <property name="pixmap">
+                    <pixmap resource="new_rc.qrc">:/icons/assets/icons/box_5317283-removebg-preview.png</pixmap>
+                   </property>
+                   <property name="scaledContents">
+                    <bool>true</bool>
+                   </property>
+                   <property name="alignment">
+                    <set>Qt::AlignCenter</set>
+                   </property>
+                  </widget>
+                 </item>
+                 <item row="1" column="0" colspan="3">
+                  <widget class="QPushButton" name="pushButton_4">
+                   <property name="minimumSize">
+                    <size>
+                     <width>200</width>
+                     <height>0</height>
+                    </size>
+                   </property>
+                   <property name="text">
+                    <string>View Products</string>
+                   </property>
+                  </widget>
+                 </item>
+                </layout>
+               </item>
+               <item row="2" column="0">
+                <layout class="QGridLayout" name="gridLayout_11">
+                 <item row="0" column="1">
+                  <widget class="QLabel" name="label_6">
+                   <property name="maximumSize">
+                    <size>
+                     <width>100</width>
+                     <height>100</height>
+                    </size>
+                   </property>
+                   <property name="styleSheet">
+                    <string notr="true">border:none;</string>
+                   </property>
+                   <property name="text">
+                    <string/>
+                   </property>
+                   <property name="pixmap">
+                    <pixmap resource="new_rc.qrc">:/icons/assets/icons/shopping_5566654-removebg-preview.png</pixmap>
+                   </property>
+                   <property name="scaledContents">
+                    <bool>true</bool>
+                   </property>
+                   <property name="alignment">
+                    <set>Qt::AlignCenter</set>
+                   </property>
+                  </widget>
+                 </item>
+                 <item row="1" column="0" colspan="3">
+                  <widget class="QPushButton" name="pushButton_5">
+                   <property name="minimumSize">
+                    <size>
+                     <width>200</width>
+                     <height>0</height>
+                    </size>
+                   </property>
+                   <property name="text">
+                    <string>Sell Products</string>
+                   </property>
+                  </widget>
+                 </item>
+                </layout>
+               </item>
+               <item row="2" column="1">
+                <layout class="QGridLayout" name="gridLayout_12">
+                 <item row="0" column="1">
+                  <widget class="QLabel" name="label_7">
+                   <property name="maximumSize">
+                    <size>
+                     <width>100</width>
+                     <height>100</height>
+                    </size>
+                   </property>
+                   <property name="styleSheet">
+                    <string notr="true">border:none;</string>
+                   </property>
+                   <property name="text">
+                    <string/>
+                   </property>
+                   <property name="pixmap">
+                    <pixmap resource="new_rc.qrc">:/icons/assets/icons/analytics_796128-removebg-preview.png</pixmap>
+                   </property>
+                   <property name="scaledContents">
+                    <bool>true</bool>
+                   </property>
+                   <property name="alignment">
+                    <set>Qt::AlignCenter</set>
+                   </property>
+                  </widget>
+                 </item>
+                 <item row="1" column="0" colspan="3">
+                  <widget class="QPushButton" name="pushButton_6">
+                   <property name="minimumSize">
+                    <size>
+                     <width>200</width>
+                     <height>0</height>
+                    </size>
+                   </property>
+                   <property name="text">
+                    <string>Generate Report</string>
+                   </property>
+                  </widget>
+                 </item>
+                </layout>
+               </item>
+               <item row="0" column="0" colspan="2">
+                <widget class="QLabel" name="label_8">
+                 <property name="sizePolicy">
+                  <sizepolicy hsizetype="Preferred" vsizetype="Fixed">
+                   <horstretch>0</horstretch>
+                   <verstretch>0</verstretch>
+                  </sizepolicy>
+                 </property>
+                 <property name="styleSheet">
+                  <string notr="true">border:none;</string>
+                 </property>
+                 <property name="text">
+                  <string>Menu</string>
+                 </property>
+                 <property name="alignment">
+                  <set>Qt::AlignCenter</set>
+                 </property>
+                </widget>
+               </item>
+              </layout>
+             </widget>
+            </item>
+            <item row="1" column="2">
+             <spacer name="horizontalSpacer_4">
+              <property name="orientation">
+               <enum>Qt::Horizontal</enum>
+              </property>
+              <property name="sizeHint" stdset="0">
+               <size>
+                <width>40</width>
+                <height>20</height>
+               </size>
+              </property>
+             </spacer>
+            </item>
+            <item row="2" column="1">
+             <spacer name="verticalSpacer_4">
+              <property name="orientation">
+               <enum>Qt::Vertical</enum>
+              </property>
+              <property name="sizeHint" stdset="0">
+               <size>
+                <width>20</width>
+                <height>40</height>
+               </size>
+              </property>
+             </spacer>
+            </item>
+           </layout>
+          </widget>
+         </widget>
+        </item>
+       </layout>
+      </widget>
+      <widget class="QWidget" name="page_4">
+       <layout class="QGridLayout" name="gridLayout_4">
+        <item row="4" column="0" colspan="3">
+         <spacer name="verticalSpacer_2">
+          <property name="orientation">
+           <enum>Qt::Vertical</enum>
+          </property>
+          <property name="sizeHint" stdset="0">
+           <size>
+            <width>20</width>
+            <height>40</height>
+           </size>
+          </property>
+         </spacer>
+        </item>
+        <item row="1" column="0" colspan="3">
+         <spacer name="verticalSpacer">
+          <property name="orientation">
+           <enum>Qt::Vertical</enum>
+          </property>
+          <property name="sizeHint" stdset="0">
+           <size>
+            <width>20</width>
+            <height>40</height>
+           </size>
+          </property>
+         </spacer>
+        </item>
+        <item row="3" column="1">
+         <widget class="QStackedWidget" name="stackedWidget_3">
+          <property name="sizePolicy">
+           <sizepolicy hsizetype="Fixed" vsizetype="Fixed">
+            <horstretch>0</horstretch>
+            <verstretch>0</verstretch>
+           </sizepolicy>
+          </property>
+          <property name="minimumSize">
+           <size>
+            <width>500</width>
+            <height>0</height>
+           </size>
+          </property>
+          <property name="styleSheet">
+           <string notr="true">QStackedWidget{
+	border:none;
+	background:none;
+	background-color: rgb(240, 250, 255);
+}
+
+QFrame{
+	padding:0px;
+}</string>
+          </property>
+          <property name="currentIndex">
+           <number>1</number>
+          </property>
+          <widget class="QWidget" name="page_5">
+           <layout class="QGridLayout" name="gridLayout_7">
+            <item row="2" column="0" colspan="2">
+             <spacer name="verticalSpacer_6">
+              <property name="orientation">
+               <enum>Qt::Vertical</enum>
+              </property>
+              <property name="sizeHint" stdset="0">
+               <size>
+                <width>20</width>
+                <height>40</height>
+               </size>
+              </property>
+             </spacer>
+            </item>
+            <item row="1" column="0" colspan="2">
+             <widget class="QFrame" name="frame">
+              <property name="minimumSize">
+               <size>
+                <width>0</width>
+                <height>71</height>
+               </size>
+              </property>
+              <property name="frameShape">
+               <enum>QFrame::StyledPanel</enum>
+              </property>
+              <property name="frameShadow">
+               <enum>QFrame::Raised</enum>
+              </property>
+              <layout class="QGridLayout" name="gridLayout_3">
+               <item row="1" column="0" colspan="2">
+                <widget class="QLabel" name="label_3">
+                 <property name="sizePolicy">
+                  <sizepolicy hsizetype="Preferred" vsizetype="Fixed">
+                   <horstretch>0</horstretch>
+                   <verstretch>0</verstretch>
+                  </sizepolicy>
+                 </property>
+                 <property name="font">
+                  <font>
+                   <family>Comic Sans MS</family>
+                   <pointsize>-1</pointsize>
+                  </font>
+                 </property>
+                 <property name="styleSheet">
+                  <string notr="true">border:none;background:transparent;</string>
+                 </property>
+                 <property name="text">
+                  <string>Login</string>
+                 </property>
+                 <property name="alignment">
+                  <set>Qt::AlignCenter</set>
+                 </property>
+                </widget>
+               </item>
+               <item row="4" column="1">
+                <widget class="QPushButton" name="pushButton">
+                 <property name="text">
+                  <string>Register</string>
+                 </property>
+                </widget>
+               </item>
+               <item row="3" column="0" colspan="2">
+                <widget class="QFrame" name="frame_6">
+                 <property name="sizePolicy">
+                  <sizepolicy hsizetype="Preferred" vsizetype="Minimum">
+                   <horstretch>0</horstretch>
+                   <verstretch>0</verstretch>
+                  </sizepolicy>
+                 </property>
+                 <property name="styleSheet">
+                  <string notr="true">padding:0px;</string>
+                 </property>
+                 <property name="frameShape">
+                  <enum>QFrame::StyledPanel</enum>
+                 </property>
+                 <property name="frameShadow">
+                  <enum>QFrame::Raised</enum>
+                 </property>
+                 <layout class="QHBoxLayout" name="horizontalLayout_4">
+                  <property name="spacing">
+                   <number>0</number>
+                  </property>
+                  <property name="leftMargin">
+                   <number>0</number>
+                  </property>
+                  <property name="topMargin">
+                   <number>0</number>
+                  </property>
+                  <property name="rightMargin">
+                   <number>0</number>
+                  </property>
+                  <property name="bottomMargin">
+                   <number>0</number>
+                  </property>
+                  <item>
+                   <widget class="QLineEdit" name="lineEdit_2">
+                    <property name="sizePolicy">
+                     <sizepolicy hsizetype="Expanding" vsizetype="Minimum">
+                      <horstretch>0</horstretch>
+                      <verstretch>0</verstretch>
+                     </sizepolicy>
+                    </property>
+                    <property name="styleSheet">
+                     <string notr="true">padding:5px;border:none;</string>
+                    </property>
+                    <property name="echoMode">
+                     <enum>QLineEdit::Password</enum>
+                    </property>
+                    <property name="placeholderText">
+                     <string>Password</string>
+                    </property>
+                   </widget>
+                  </item>
+                  <item>
+                   <widget class="QPushButton" name="pushButton_9">
+                    <property name="minimumSize">
+                     <size>
+                      <width>25</width>
+                      <height>25</height>
+                     </size>
+                    </property>
+                    <property name="styleSheet">
+                     <string notr="true">padding:0px;
+border:none;
+background:none;</string>
+                    </property>
+                    <property name="text">
+                     <string/>
+                    </property>
+                    <property name="icon">
+                     <iconset>
+                      <normaloff>:/icons/assets/icons/password/eye-svgrepo-com.svg</normaloff>:/icons/assets/icons/password/eye-svgrepo-com.svg</iconset>
+                    </property>
+                    <property name="iconSize">
+                     <size>
+                      <width>25</width>
+                      <height>25</height>
+                     </size>
+                    </property>
+                   </widget>
+                  </item>
+                 </layout>
+                </widget>
+               </item>
+               <item row="2" column="0" colspan="2">
+                <widget class="QLineEdit" name="lineEdit">
+                 <property name="placeholderText">
+                  <string>Email</string>
+                 </property>
+                </widget>
+               </item>
+               <item row="4" column="0">
+                <widget class="QPushButton" name="pushButton_2">
+                 <property name="text">
+                  <string>Login</string>
+                 </property>
+                </widget>
+               </item>
+              </layout>
+             </widget>
+            </item>
+            <item row="0" column="0" colspan="2">
+             <spacer name="verticalSpacer_5">
+              <property name="orientation">
+               <enum>Qt::Vertical</enum>
+              </property>
+              <property name="sizeHint" stdset="0">
+               <size>
+                <width>20</width>
+                <height>40</height>
+               </size>
+              </property>
+             </spacer>
+            </item>
+           </layout>
+          </widget>
+          <widget class="QWidget" name="page_6">
+           <layout class="QGridLayout" name="gridLayout_8">
+            <item row="0" column="0">
+             <widget class="QFrame" name="frame_7">
+              <property name="sizePolicy">
+               <sizepolicy hsizetype="Expanding" vsizetype="Preferred">
+                <horstretch>0</horstretch>
+                <verstretch>0</verstretch>
+               </sizepolicy>
+              </property>
+              <property name="frameShape">
+               <enum>QFrame::StyledPanel</enum>
+              </property>
+              <property name="frameShadow">
+               <enum>QFrame::Raised</enum>
+              </property>
+              <layout class="QGridLayout" name="gridLayout_13">
+               <item row="0" column="1">
+                <widget class="QPushButton" name="pushButton_16">
+                 <property name="sizePolicy">
+                  <sizepolicy hsizetype="Minimum" vsizetype="Minimum">
+                   <horstretch>0</horstretch>
+                   <verstretch>0</verstretch>
+                  </sizepolicy>
+                 </property>
+                 <property name="minimumSize">
+                  <size>
+                   <width>30</width>
+                   <height>30</height>
+                  </size>
+                 </property>
+                 <property name="maximumSize">
+                  <size>
+                   <width>50</width>
+                   <height>50</height>
+                  </size>
+                 </property>
+                 <property name="font">
+                  <font>
+                   <family>Comic Sans MS</family>
+                   <pointsize>-1</pointsize>
+                  </font>
+                 </property>
+                 <property name="text">
+                  <string>&lt;</string>
+                 </property>
+                 <property name="iconSize">
+                  <size>
+                   <width>50</width>
+                   <height>50</height>
+                  </size>
+                 </property>
+                </widget>
+               </item>
+               <item row="1" column="1" rowspan="2" colspan="4">
+                <widget class="QFrame" name="frame_10">
+                 <property name="styleSheet">
+                  <string notr="true">QFrame{
+    border: none;
+}
+
+QLabel{
+	border:none;
+}
+
+QFrame#frame_11{
+     border: 2px solid #4682b4;
+
+}
+
+QLineEdit#lineEdit_7{
+	border:none;
+}
+
+</string>
+                 </property>
+                 <property name="frameShape">
+                  <enum>QFrame::StyledPanel</enum>
+                 </property>
+                 <property name="frameShadow">
+                  <enum>QFrame::Raised</enum>
+                 </property>
+                 <layout class="QGridLayout" name="gridLayout_20">
+                  <item row="1" column="0">
+                   <widget class="QLabel" name="label_17">
+                    <property name="styleSheet">
+                     <string notr="true">border:none;</string>
+                    </property>
+                    <property name="text">
+                     <string>Employee Name:</string>
+                    </property>
+                   </widget>
+                  </item>
+                  <item row="3" column="0">
+                   <widget class="QLabel" name="label_18">
+                    <property name="text">
+                     <string>Password:</string>
+                    </property>
+                   </widget>
+                  </item>
+                  <item row="0" column="0">
+                   <widget class="QLabel" name="label_11">
+                    <property name="styleSheet">
+                     <string notr="true">border:none;</string>
+                    </property>
+                    <property name="text">
+                     <string>Employee Mail:</string>
+                    </property>
+                   </widget>
+                  </item>
+                  <item row="0" column="1">
+                   <widget class="QLineEdit" name="lineEdit_3">
+                    <property name="placeholderText">
+                     <string>default@example.com</string>
+                    </property>
+                   </widget>
+                  </item>
+                  <item row="1" column="1">
+                   <widget class="QLineEdit" name="lineEdit_4">
+                    <property name="text">
+                     <string/>
+                    </property>
+                    <property name="placeholderText">
+                     <string>Alan etc</string>
+                    </property>
+                   </widget>
+                  </item>
+                  <item row="3" column="1">
+                   <widget class="QFrame" name="frame_11">
+                    <property name="sizePolicy">
+                     <sizepolicy hsizetype="Preferred" vsizetype="Fixed">
+                      <horstretch>0</horstretch>
+                      <verstretch>0</verstretch>
+                     </sizepolicy>
+                    </property>
+                    <property name="minimumSize">
+                     <size>
+                      <width>0</width>
+                      <height>39</height>
+                     </size>
+                    </property>
+                    <property name="styleSheet">
+                     <string notr="true">padding:0px;</string>
+                    </property>
+                    <property name="frameShape">
+                     <enum>QFrame::StyledPanel</enum>
+                    </property>
+                    <property name="frameShadow">
+                     <enum>QFrame::Raised</enum>
+                    </property>
+                    <layout class="QHBoxLayout" name="horizontalLayout_6">
+                     <property name="spacing">
+                      <number>0</number>
+                     </property>
+                     <property name="leftMargin">
+                      <number>0</number>
+                     </property>
+                     <property name="topMargin">
+                      <number>0</number>
+                     </property>
+                     <property name="rightMargin">
+                      <number>0</number>
+                     </property>
+                     <property name="bottomMargin">
+                      <number>0</number>
+                     </property>
+                     <item>
+                      <widget class="QLineEdit" name="lineEdit_7">
+                       <property name="sizePolicy">
+                        <sizepolicy hsizetype="Expanding" vsizetype="Minimum">
+                         <horstretch>0</horstretch>
+                         <verstretch>0</verstretch>
+                        </sizepolicy>
+                       </property>
+                       <property name="echoMode">
+                        <enum>QLineEdit::Password</enum>
+                       </property>
+                       <property name="placeholderText">
+                        <string>Password</string>
+                       </property>
+                      </widget>
+                     </item>
+                     <item>
+                      <widget class="QPushButton" name="pushButton_20">
+                       <property name="minimumSize">
+                        <size>
+                         <width>25</width>
+                         <height>25</height>
+                        </size>
+                       </property>
+                       <property name="styleSheet">
+                        <string notr="true">padding:0px;
+border:none;
+background:none;</string>
+                       </property>
+                       <property name="text">
+                        <string/>
+                       </property>
+                       <property name="icon">
+                        <iconset>
+                         <normaloff>:/icons/assets/icons/password/eye-svgrepo-com.svg</normaloff>:/icons/assets/icons/password/eye-svgrepo-com.svg</iconset>
+                       </property>
+                       <property name="iconSize">
+                        <size>
+                         <width>25</width>
+                         <height>25</height>
+                        </size>
+                       </property>
+                      </widget>
+                     </item>
+                    </layout>
+                   </widget>
+                  </item>
+                  <item row="4" column="0">
+                   <widget class="QLabel" name="label_19">
+                    <property name="text">
+                     <string>Confirm Password:</string>
+                    </property>
+                   </widget>
+                  </item>
+                  <item row="4" column="1">
+                   <widget class="QFrame" name="frame_12">
+                    <property name="sizePolicy">
+                     <sizepolicy hsizetype="Preferred" vsizetype="Fixed">
+                      <horstretch>0</horstretch>
+                      <verstretch>0</verstretch>
+                     </sizepolicy>
+                    </property>
+                    <property name="minimumSize">
+                     <size>
+                      <width>0</width>
+                      <height>39</height>
+                     </size>
+                    </property>
+                    <property name="styleSheet">
+                     <string notr="true">padding:0px;
+border:2px solid rgb(70, 130, 180);</string>
+                    </property>
+                    <property name="frameShape">
+                     <enum>QFrame::StyledPanel</enum>
+                    </property>
+                    <property name="frameShadow">
+                     <enum>QFrame::Raised</enum>
+                    </property>
+                    <layout class="QHBoxLayout" name="horizontalLayout_7">
+                     <property name="spacing">
+                      <number>0</number>
+                     </property>
+                     <property name="leftMargin">
+                      <number>0</number>
+                     </property>
+                     <property name="topMargin">
+                      <number>0</number>
+                     </property>
+                     <property name="rightMargin">
+                      <number>0</number>
+                     </property>
+                     <property name="bottomMargin">
+                      <number>0</number>
+                     </property>
+                     <item>
+                      <widget class="QLineEdit" name="lineEdit_8">
+                       <property name="sizePolicy">
+                        <sizepolicy hsizetype="Expanding" vsizetype="Minimum">
+                         <horstretch>0</horstretch>
+                         <verstretch>0</verstretch>
+                        </sizepolicy>
+                       </property>
+                       <property name="styleSheet">
+                        <string notr="true">border:none</string>
+                       </property>
+                       <property name="echoMode">
+                        <enum>QLineEdit::Password</enum>
+                       </property>
+                       <property name="placeholderText">
+                        <string>Password</string>
+                       </property>
+                      </widget>
+                     </item>
+                     <item>
+                      <widget class="QPushButton" name="pushButton_21">
+                       <property name="minimumSize">
+                        <size>
+                         <width>25</width>
+                         <height>25</height>
+                        </size>
+                       </property>
+                       <property name="styleSheet">
+                        <string notr="true">padding:0px;
+border:none;
+background:none;</string>
+                       </property>
+                       <property name="text">
+                        <string/>
+                       </property>
+                       <property name="icon">
+                        <iconset>
+                         <normaloff>:/icons/assets/icons/password/eye-svgrepo-com.svg</normaloff>:/icons/assets/icons/password/eye-svgrepo-com.svg</iconset>
+                       </property>
+                       <property name="iconSize">
+                        <size>
+                         <width>25</width>
+                         <height>25</height>
+                        </size>
+                       </property>
+                      </widget>
+                     </item>
+                    </layout>
+                   </widget>
+                  </item>
+                 </layout>
+                </widget>
+               </item>
+               <item row="3" column="4">
+                <widget class="QPushButton" name="pushButton_15">
+                 <property name="text">
+                  <string>Add Employee</string>
+                 </property>
+                </widget>
+               </item>
+               <item row="0" column="2" colspan="3">
+                <widget class="QLabel" name="label_10">
+                 <property name="sizePolicy">
+                  <sizepolicy hsizetype="Preferred" vsizetype="Fixed">
+                   <horstretch>0</horstretch>
+                   <verstretch>0</verstretch>
+                  </sizepolicy>
+                 </property>
+                 <property name="styleSheet">
+                  <string notr="true">border:none;</string>
+                 </property>
+                 <property name="text">
+                  <string>Add New Employee</string>
+                 </property>
+                 <property name="alignment">
+                  <set>Qt::AlignCenter</set>
+                 </property>
+                </widget>
+               </item>
+              </layout>
+             </widget>
+            </item>
+           </layout>
+          </widget>
+         </widget>
+        </item>
+        <item row="0" column="0" colspan="3">
+         <widget class="QLabel" name="label_2">
+          <property name="sizePolicy">
+           <sizepolicy hsizetype="Preferred" vsizetype="Fixed">
+            <horstretch>0</horstretch>
+            <verstretch>0</verstretch>
+           </sizepolicy>
+          </property>
+          <property name="font">
+           <font>
+            <family>Comic Sans MS</family>
+            <pointsize>-1</pointsize>
+            <weight>75</weight>
+            <bold>true</bold>
+           </font>
+          </property>
+          <property name="text">
+           <string>Faiz e Hussaini Traders</string>
+          </property>
+          <property name="alignment">
+           <set>Qt::AlignCenter</set>
+          </property>
+         </widget>
+        </item>
+        <item row="3" column="0">
+         <spacer name="horizontalSpacer">
+          <property name="orientation">
+           <enum>Qt::Horizontal</enum>
+          </property>
+          <property name="sizeHint" stdset="0">
+           <size>
+            <width>40</width>
+            <height>20</height>
+           </size>
+          </property>
+         </spacer>
+        </item>
+        <item row="2" column="2" rowspan="2">
+         <spacer name="horizontalSpacer_2">
+          <property name="orientation">
+           <enum>Qt::Horizontal</enum>
+          </property>
+          <property name="sizeHint" stdset="0">
+           <size>
+            <width>40</width>
+            <height>20</height>
+           </size>
+          </property>
+         </spacer>
+        </item>
+       </layout>
+      </widget>
+     </widget>
+    </item>
+   </layout>
+  </widget>
+ </widget>
+ <resources>
+  <include location="new_rc.qrc"/>
+ </resources>
+ <connections/>
+</ui>
